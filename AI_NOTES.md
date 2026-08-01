@@ -24,3 +24,12 @@ just the code.
 Validated: manually tested all 4 endpoints via Swagger UI —
 add, list, filter by category, total (overall + by category),
 confirmed category filter is case-insensitive as intended.
+## Step 5 — tests/test_expenses.py
+AI-generated: full test suite (8 tests) covering add, list all,
+filter by category, total overall, total by category, empty-total
+edge case, delete, and delete-nonexistent (404 case).
+Validated: ran pytest, all 8 tests passed on first run. Reviewed
+the reset_data fixture to understand why it's needed — without it,
+leftover data from earlier tests would make later tests (like
+test_total_with_no_expenses) fail unpredictably depending on run
+order.
