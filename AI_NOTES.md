@@ -33,3 +33,11 @@ the reset_data fixture to understand why it's needed — without it,
 leftover data from earlier tests would make later tests (like
 test_total_with_no_expenses) fail unpredictably depending on run
 order.
+## Summary
+This project was built with AI assistance (Claude) guiding each
+step — project structure, Pydantic models, JSON storage layer,
+FastAPI endpoints, and the pytest test suite. All code was manually
+tested via Swagger UI and pytest before committing. The most
+significant independent debugging was diagnosing a UTF-8 BOM
+encoding issue causing JSON parse failures (see Step 4) — traced by
+inspecting raw file bytes rather than just re-reading the code.
